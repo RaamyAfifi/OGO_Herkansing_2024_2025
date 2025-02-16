@@ -6,7 +6,7 @@ import com.Jabberpoint.SlideItems.TextItem;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.ImageObserver;
-import java.util.Vector;
+import java.util.ArrayList;
 
 /** <p>A slide. This class has drawing functionality.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -22,15 +22,27 @@ public class Slide {
 	public final static int WIDTH = 1200;
 	public final static int HEIGHT = 800;
 	private String title; //The title is kept separately
-	private Vector<SlideItem> items; //The SlideItems are kept in a vector
+	private ArrayList<SlideItem> items; //The SlideItems are kept in a ArrayList
+
+	public Slide(String title, ArrayList<SlideItem> items)
+	{
+		if(title != null) {
+			this.title = title;
+		}
+		if(items != null) {
+			this.items = items;
+		}
+	}
 
 	public Slide() {
-		items = new Vector<SlideItem>();
+		this(null, new ArrayList<>());
 	}
 
 	//Add a SlideItem
 	public void append(SlideItem anItem) {
-		items.addElement(anItem);
+		if(anItem != null){
+			items.add(anItem);
+		}
 	}
 
 	//Return the title of a slide
@@ -50,11 +62,14 @@ public class Slide {
 
 	//Returns the SlideItem
 	public SlideItem getSlideItem(int number) {
-		return (SlideItem)items.elementAt(number);
+		if(number < 0 || number >= items.size()) {
+			throw new IndexOutOfBoundsException();
+		}
+		return items.get(number);
 	}
 
-	//Return all the SlideItems in a vector
-	public Vector<SlideItem> getSlideItems() {
+	//Return all the SlideItems in a ArrayList
+	public ArrayList<SlideItem> getSlideItems() {
 		return items;
 	}
 

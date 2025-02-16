@@ -24,9 +24,20 @@ public class Presentation {
         }
     }
 
-    public Presentation()
-    {
-        clear();
+    public Presentation(ArrayList<Slide> slides) {
+        if(slides == null){
+            this.showList = new ArrayList<>();
+            clear();
+        }
+        else{
+            this.showList = slides;
+            this.currentSlideNumber = 0;
+        }
+    }
+
+    // Default Constructor initializes an empty list
+    public Presentation() {
+        this(new ArrayList<>());
     }
 
     public ArrayList<Slide> getShowList()
