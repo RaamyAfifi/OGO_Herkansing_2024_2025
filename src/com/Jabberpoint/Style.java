@@ -30,9 +30,6 @@ public class Style {
 	public Font font;
 	public int fontSize;
 	public int leading;
-//	static {
-//		createDefaultStyles();
-//	}
 
 	public static void createDefaultStyles() {
 		styles = new Style[]{

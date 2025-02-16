@@ -18,7 +18,6 @@ import com.Jabberpoint.SlideItems.TextItem;
 import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 
 
@@ -43,7 +42,6 @@ public class XMLAccessor extends Accessor
 			Element doc = document.getDocumentElement();
 			presentation.setTitle(getTitle(doc, "showtitle"));
 			loadSlides(doc, presentation);
-
 		}
 		catch (IOException iox) {
 			System.err.println(iox.toString());
