@@ -24,6 +24,7 @@ public class Slide {
 	private String title; //The title is kept separately
 	private ArrayList<SlideItem> items; //The SlideItems are kept in a ArrayList
 
+	// Constructor for dependency injection
 	public Slide(String title, ArrayList<SlideItem> items)
 	{
 		if(title != null) {

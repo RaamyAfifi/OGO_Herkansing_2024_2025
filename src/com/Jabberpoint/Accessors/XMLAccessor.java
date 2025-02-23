@@ -95,7 +95,6 @@ public class XMLAccessor extends Accessor
 				throw new IllegalArgumentException("Unsupported type: " + type);
 			}
 		}
-
 	}
 
 	public void saveFile(Presentation presentation, String filename) throws IOException

@@ -10,6 +10,7 @@ public class Presentation {
 
     private List<PresentationObserver> observers = new ArrayList<>();
 
+    // notify when navigation has happened
     public void addObserver(PresentationObserver observer)
     {
         observers.add(observer);
@@ -24,6 +25,7 @@ public class Presentation {
         }
     }
 
+    // Constructor for dependency injection
     public Presentation(ArrayList<Slide> slides) {
         if(slides == null){
             this.showList = new ArrayList<>();

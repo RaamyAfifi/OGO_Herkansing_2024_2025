@@ -72,7 +72,6 @@ public class TextItem extends SlideItem
             }
             ysize += layout.getLeading() + layout.getDescent();
         }
-
         return new Rectangle((int) (myStyle.indent*scale), 0, xsize, ysize );
     }
 
